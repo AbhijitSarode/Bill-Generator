@@ -30,31 +30,40 @@
 </head>
 <body>
     <h1 class="font-DMSans">BILL <br> SPILL</h1>
-
     <div class="wrapper">
-        <div class="left">
-            <p class="font-Inconsolata">Bill</p>
-            <input type="number" name="" id="subtotal" oninput="calculate()">
-            <p class="font-Inconsolata">Select Tip %</p>
-            <div class="tips">
-                <button class="font-Monospaceland" oninput="calculate(5)">5%</button>
-                <button class="font-Monospaceland" oninput="calculate(10)">10%</button>
-                <button class="font-Monospaceland" oninput="calculate(15)">15%</button>
-                <button class="font-Monospaceland" oninput="calculate(25)">25%</button>
-                <button class="font-Monospaceland" oninput="calculate(50)">50%</button>
-                <button class="font-Monospaceland" oninput="calculate(75)">75%</button>
+        <section class="left">
+            <div class="subtotal">
+                <label for="subtotal" class="font-Inconsolata">Bill</label>
+                <input class="font-Monospaceland" type="number" name="subtotal" id="subtotal" placeholder="₹0" oninput="calculate()">
             </div>
-            <input type="number" name="" id="people" oninput="calculate()">
-            <p class="font-Inconsolata">Number of People</p>
-        </div>
-        <div class="right">
-            <p class="font-Inconsolata">Tip Amount <span>/ person</span> </p> 
-            
-            <p class="font-Inconsolata">Total <span>/ person</span> </p>
 
-            <button class="font-DMSans reset">RESET</button>
-        </div>
+            <div class="tip">
+                <label for="tip" class="font-Inconsolata">Select Tip %</label>
+                <div class="buttons">
+                    <button class="font-Monospaceland" onclick="calculate(5)">5%</button>
+                    <button class="font-Monospaceland" onclick="calculate(10)">10%</button>
+                    <button class="font-Monospaceland" onclick="calculate(15)">15%</button>
+                    <button class="font-Monospaceland" onclick="calculate(25)">25%</button>
+                    <button class="font-Monospaceland" onclick="calculate(50)">50%</button>
+                    <button class="font-Monospaceland" onclick="calculate(75)">75%</button>
+                </div>
+            </div>
+
+            <div class="people">
+                <label for="people" class="font-Inconsolata">Number of People</label>
+                <input class="font-Monospaceland" type="number" name="people" id="people" placeholder="Enter Total Number of People" value="1"  oninput="calculate()">
+            </div>
+        </section>
+        <section class="right">
+            <p class="font-Inconsolata">Tip Amount <span>/ person</span></p>
+            <p class="font-Monospaceland amount" id="tip-per-person">Rs 0</p>
+            <p class="font-Inconsolata">Total <span>/ person</span></p>
+            <p class="font-Monospaceland amount"  id="total-per-person">Rs 0</p>
+            <input type="reset" value="Reset" class="font-DMSans reset" onclick="reset()">
+        </section>
+
     </div>
+
     <script src="index.js"></script>
 </body>
 </html>

@@ -19,6 +19,7 @@ h1 {
 
 .wrapper {
     display: flex;
+    justify-content: space-around;
     background-color: white;
     width: 70vw;
     height: 70vh;
@@ -27,12 +28,32 @@ h1 {
     padding: 1rem;
 }
 
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    border-radius: 1rem;
+    height: 90%;
+    align-self: center;
+}
+
 .right {
     background-color: #9C60FF;
     width: 45%;
     border-radius: 1rem;
     height: 90%;
     align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
 
 button {
@@ -44,6 +65,7 @@ button {
     color: #E9DBFF;
     letter-spacing: 0.01rem;
     font-size: 1.3125rem;
+    flex-basis: 5rem;
 }
 
 .reset {
@@ -52,10 +74,22 @@ button {
     width: 90%;
     letter-spacing: 0.19rem;
     font-weight: 700;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    padding: 1rem 0;
+    border-radius: 7px;
 }
 
-p {
+label {
     color: #9C60FF;
+    padding-bottom: 0.5rem;
+    display: block;
+}
+
+input {
+    margin-bottom: 0.5rem;
+    width: 100%;
 }
 
 .right p {
@@ -64,6 +98,10 @@ p {
 
 .right span {
     color: #C39FFF;
+}
+
+.amount {
+    display: inline;
 }
 
 @font-face {
@@ -86,5 +124,16 @@ p {
 @media only screen and (max-width: 600px) {
     .wrapper {
         flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        flex-direction: column-reverse;
+    }
+    .left,
+    .right {
+        width: 90%;
+        height: 45%;
     }
 }
